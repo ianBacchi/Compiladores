@@ -12,3 +12,4 @@ fatorial := fatorial * (parametro - 1)
 parametro := parametro - 1
 FIM
 IMPRIMIR fatorial
+ 

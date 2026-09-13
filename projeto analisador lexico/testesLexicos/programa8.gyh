@@ -1,0 +1,18 @@
+#Programa não possui erro léxico
+
+:DEC
+parametro:INT
+fatorial:REAL
+
+:PROG 
+# ####
+LER parametro
+fatorial := parametro 
+SE parametro != 0 OU parametro < == 0 ENTAO fatorial := 1
+ENQTO parametro > 1
+INI
+fatorial := fatorial * (parametro - 1) 
+parametro := parametro - 12.456
+FIM
+IMPRIMIR fatorial
+IMPRIMIR "Oi"
