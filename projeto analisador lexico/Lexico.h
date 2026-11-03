@@ -64,7 +64,7 @@ private:
                 return token(lexema, palavra->second);
             }
             erro(lexema, linha);
-            return nullptr;
+            return token(lexema, "ErroLexico");
         }
 
         return token(lexema, "Var");
@@ -89,7 +89,7 @@ private:
 
         if (lexema.back() == '.') {
             erro(lexema, linha);
-            return nullptr;
+            return token(lexema, "ErroLexico");
         }
 
         return token(lexema, temPonto ? "NumReal" : "NumInt");
@@ -102,14 +102,14 @@ private:
         while ((c = arq->lerProxCaracter()) != -1 && c != '"') {
             if (c == '\n') {
                 erro(lexema, linha);
-                return nullptr;
+                return token(lexema, "ErroLexico");
             }
             lexema += static_cast<char>(c);
         }
 
         if (c == -1) {
             erro(lexema, linha);
-            return nullptr;
+            return token(lexema, "ErroLexico");
         }
 
         return token(lexema, "Cadeia");
@@ -180,13 +180,13 @@ public:
                     if (c == '=') return token("==", "OpRelIgual");
                     if (c != -1) arq->devolverCaracter();
                     erro("=", linha);
-                    return nullptr;
+                    return token("=", "ErroLexico");
                 case '!':
                     c = arq->lerProxCaracter();
                     if (c == '=') return token("!=", "OpRelDif");
                     if (c != -1) arq->devolverCaracter();
                     erro("!", linha);
-                    return nullptr;
+                    return token("!", "ErroLexico");
                 case '+': return token("+", "OpAritSoma");
                 case '-': return token("-", "OpAritSub");
                 case '*': return token("*", "OpAritMult");
@@ -195,7 +195,7 @@ public:
                 case ')': return token(")", "FechaPar");
                 default:
                     erro(string(1, static_cast<char>(c)), linha);
-                    return nullptr;
+                    return token(string(1, static_cast<char>(c)), "ErroLexico");
             }
         }
 
