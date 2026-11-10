@@ -1,0 +1,10 @@
+# Erros sintaticos: condicao sem operador relacional (linha 7), IMPRIMIR sem argumento (linha 8), expressao incompleta (linha 9)
+:DEC
+x:INT
+
+:PROG
+LER x
+SE x + 1 ENTAO x := 0
+IMPRIMIR ENTAO
+x := x * )
+IMPRIMIR "fim"

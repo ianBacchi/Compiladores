@@ -100,7 +100,7 @@ private:
         int c;
 
         while ((c = arq->lerProxCaracter()) != -1 && c != '"') {
-            if (c == '\n') {
+            if (c == '\n' || c == '\r') {
                 erro(lexema, linha);
                 return token(lexema, "ErroLexico");
             }

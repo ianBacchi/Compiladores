@@ -1,0 +1,10 @@
+# Erros sintaticos: tipo invalido (linha 3), falta ':' antes de PROG (linha 6), falta FIM (fim do arquivo)
+:DEC
+x:x
+y:INT
+
+PROG
+ENQTO x < 10
+   INI
+      x := x + 1
+      IMPRIMIR x

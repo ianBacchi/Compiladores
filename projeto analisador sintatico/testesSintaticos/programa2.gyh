@@ -1,0 +1,20 @@
+# Sem erros: expressoes com parenteses, E/OU, SENAO, REAL e cadeia
+:DEC
+a:INT
+b:INT
+media:REAL
+
+:PROG
+LER a
+LER b
+media := (a + b) / 2.0
+SE (a + 1) * 2 > b E (a < 10 OU b >= 3) ENTAO
+   INI
+      IMPRIMIR "condicao verdadeira"
+      a := a - (b * (2 + a))
+   FIM
+SENAO IMPRIMIR "condicao falsa"
+SE ((a > 1) OU (b != 2)) ENTAO
+   SE a <= b ENTAO IMPRIMIR a SENAO IMPRIMIR b
+ENQTO a < 100 ENTAO a := a * 2
+IMPRIMIR media

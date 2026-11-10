@@ -1,0 +1,11 @@
+# Erros sintaticos: falta ENTAO (linha 8), falta ':=' (linha 9), parentese nao fechado (linha 10)
+:DEC
+x:INT
+y:INT
+
+:PROG
+LER x
+SE x > 0 IMPRIMIR x
+y x + 1
+y := (x + 2 * 3
+IMPRIMIR y

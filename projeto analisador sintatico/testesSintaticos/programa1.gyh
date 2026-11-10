@@ -1,0 +1,16 @@
+# Exemplo do slide de saida: 1 erro sintatico (linha 3) e 2 lexicos (linhas 10 e 14)
+:DEC
+parametro INT
+fatorial:INT
+
+:PROG
+# Calcula o fatorial de um numero inteiro
+LER parametro
+fatorial := parametro
+SE parametro = 0 ENTAO fatorial := 1
+ENQTO parametro > 1
+   INI
+      fatorial := fatorial * (parametro - 1)
+      parametro = parametro - 1
+   FIM
+IMPRIMIR fatorial
